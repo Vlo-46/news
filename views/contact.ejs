@@ -78,67 +78,26 @@
                 <h5>Info location</h5>
                 <div class="wrap__contact-form-office">
                     <ul class="list-unstyled">
-                        <li>
-                                <span>
-                                    <i class="fa fa-home"></i>
-                                </span>
-
-                            PO Box 16122 Collins Street West Victoria
-                            8007 Australia
-
-
-                        </li>
-                        <li>
-                                <span>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="tel:">(+12) 34567 890 123</a>
-                                </span>
-
-                        </li>
-                        <li>
-                                <span>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="mailto:">mail@example.com</a>
-                                </span>
-
-                        </li>
-                        <li>
-                                <span>
-                                    <i class="fa fa-globe"></i>
-                                    <a href="contact.html#" target="_blank"> www.yourdomain.com</a>
-                                </span>
-                        </li>
+                        <% contact.forEach(i => { %>
+                            <li>
+                            <span>
+                                    <i class="fa <%= i.icon %>"></i>
+                            </span>
+                                <%= i.text %>
+                            </li>
+                        <% }) %>
                     </ul>
 
                     <div class="social__media">
                         <h5>find us</h5>
                         <ul class="list-inline">
-
-                            <li class="list-inline-item">
-                                <a href="contact.html#" class="btn btn-social rounded text-white facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="contact.html#" class="btn btn-social rounded text-white twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="contact.html#" class="btn btn-social rounded text-white whatsapp">
-                                    <i class="fa fa-whatsapp"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="contact.html#" class="btn btn-social rounded text-white telegram">
-                                    <i class="fa fa-telegram"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="contact.html#" class="btn btn-social rounded text-white linkedin">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
+                            <% website.forEach(i => { %>
+                                <li class="list-inline-item">
+                                    <a href="<%= i.link %>" class="btn btn-social rounded text-white facebook">
+                                        <i class="fa <%= i.icon %>"></i>
+                                    </a>
+                                </li>
+                            <% }) %>
                         </ul>
                     </div>
                 </div>

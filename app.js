@@ -48,8 +48,14 @@ app.use('/login', loginRouter)
 //admin routes
 
 const adminUsersRouter = require('./routes/admin/users')
+const adminNewsRouter = require('./routes/admin/news')
+const adminAboutRouter = require('./routes/admin/about')
+const adminSettingsRouter = require('./routes/admin/settings')
 
 app.use('/admin-users', adminUsersRouter)
+app.use('/admin-news', adminNewsRouter)
+app.use('/admin-about', adminAboutRouter)
+app.use('/admin-settings', adminSettingsRouter)
 
 
 const PORT = process.env.PORT || 3000;
@@ -70,4 +76,5 @@ function start() {
         console.log(e)
     }
 }
+
 start()

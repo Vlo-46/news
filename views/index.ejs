@@ -7,289 +7,44 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="wrapp__list__article-responsive wrapp__list__article-responsive-carousel">
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news1.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                Republican Senator Vital to Health
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
+                    <% header_news.forEach(i => { %>
+                        <div class="item">
+                            <!-- Post Article -->
+                            <div class="card__post card__post-list">
+                                <div class="image-sm">
+                                    <a href="/article-detail/<%= i.id %>">
+                                        <img src="/uploads/<%= i.avatar[0] %>" class="img-fluid" alt="">
+                                    </a>
                                 </div>
+                                <div class="card__post__body ">
+                                    <div class="card__post__content">
+                                        <div class="card__post__author-info mb-2">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+													<span class="text-primary">
+														<%= i.author %>
+													</span>
+                                                </li>
+                                                <li class="list-inline-item">
+													<span class="text-dark text-capitalize date">
+														<%= i.created_at %>
+													</span>
+                                                </li>
 
-
+                                            </ul>
+                                        </div>
+                                        <div class="card__post__title">
+                                            <h6>
+                                                <a href="/article-detail/<%= i.id %>">
+                                                    <%= i.title %>
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news2.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                Barack Obama and Family Visit indonesia
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news3.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                6 Best Tips for Building a Good Shipping Boat
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news4.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                6 Best Tips for Building a Good Shipping Boat
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news5.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                6 Best Tips for Building a Good Shipping Boat
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Post Article -->
-                        <div class="card__post card__post-list">
-                            <div class="image-sm">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/thumb/news6.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-
-
-                            <div class="card__post__body ">
-                                <div class="card__post__content">
-
-                                    <div class="card__post__author-info mb-2">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-													<span class="text-primary">
-														by david hall
-													</span>
-                                            </li>
-                                            <li class="list-inline-item">
-													<span class="text-dark text-capitalize">
-														descember 09, 2020
-													</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="card__post__title">
-                                        <h6>
-                                            <a href="homepage-v1.html#">
-                                                6 Best Tips for Building a Good Shipping Boat
-                                            </a>
-                                        </h6>
-                                        <!-- <p class="d-none d-lg-block d-xl-block">
-                Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat
-                sollicitudin ut est. In fringilla dui dui.
-            </p> -->
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -306,83 +61,42 @@
             <div class="row no-gutters">
                 <div class="col-md-8 ">
                     <div class="card__post-carousel">
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="card__post">
-                                <div class="card__post__body">
-                                    <a href="article-detail-v1.html">
-                                        <img src="images/corona.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="card__post__content bg__post-cover">
-                                        <div class="card__post__category">
-                                            covid-19
-                                        </div>
-                                        <div class="card__post__title">
-                                            <h2>
-                                                <a href="homepage-v1.html#">
-                                                    Global solidarity to fight COVID-19, and indonesia stay safe and
-                                                    health
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div class="card__post__author-info">
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="homepage-v1.html#">
-                                                        by david hall
+                        <% special_news.forEach(i => { %>
+                            <div class="item">
+                                <!-- Post Article -->
+                                <div class="card__post">
+                                    <div class="card__post__body">
+                                        <a href="/article-detail/<%= i.id %>">
+                                            <img src="/uploads/<%= i.avatar[0] %>" class="img-fluid" alt="">
+                                        </a>
+                                        <div class="card__post__content bg__post-cover">
+                                            <div class="card__post__category">
+                                                <%= i.category %>
+                                            </div>
+                                            <div class="card__post__title">
+                                                <h2>
+                                                    <a href="/article-detail/<%= i.id %>">
+                                                        <%= i.title %>
                                                     </a>
-                                                </li>
-                                                <li class="list-inline-item">
-														<span>
-															Descember 09, 2020
+                                                </h2>
+                                            </div>
+                                            <div class="card__post__author-info">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <span><%= i.author %></span>
+                                                    </li>
+                                                    <li class="list-inline-item">
+														<span class="date">
+															<%= i.created_at %>
 														</span>
-                                                </li>
-                                            </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
-                        </div>
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="card__post">
-                                <div class="card__post__body">
-                                    <a href="article-detail-v1.html">
-                                        <img src="images/medium/newsimage1.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="card__post__content bg__post-cover">
-                                        <div class="card__post__category">
-                                            covid-19
-                                        </div>
-                                        <div class="card__post__title">
-                                            <h2>
-                                                <a href="homepage-v1.html#">
-                                                    meeting room is empty because of the covid-19 virus
-                                                </a>
-                                            </h2>
-                                        </div>
-                                        <div class="card__post__author-info">
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="homepage-v1.html#">
-                                                        by david hall
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-														<span>
-															Descember 09, 2020
-														</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
+                        <% }) %>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -390,71 +104,62 @@
                         <!-- Post Article -->
                         <div class="card__post ">
                             <div class="card__post__body card__post__transition">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/newsimage8.png" class="img-fluid" alt="">
+                                <a href="/article-detail/<%= special_news[1].id %>">
+                                    <img src="/uploads/<%= special_news[1].avatar[0] %>" class="img-fluid" alt="">
                                 </a>
                                 <div class="card__post__content bg__post-cover">
                                     <div class="card__post__category">
-                                        politics
+                                        <%= special_news[1].category %>
                                     </div>
                                     <div class="card__post__title">
                                         <h5>
-                                            <a href="homepage-v1.html#">
-                                                Barack Obama and Family Visit borobudur temple enjoy holiday
-                                                indonesia.</a>
+                                            <a href="/article-detail/<%= special_news[1].id %>"><%= special_news[1].title %></a>
                                         </h5>
                                     </div>
                                     <div class="card__post__author-info">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <a href="homepage-v1.html#">
-                                                    by david hall
-                                                </a>
+                                                <span><%= special_news[1].author %></span>
                                             </li>
                                             <li class="list-inline-item">
-													<span>
-														Descember 09, 2020
+													<span class="date">
+														<%= special_news[1].created_at %>
 													</span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <!-- Post Article -->
                         <div class="card__post ">
                             <div class="card__post__body card__post__transition">
-                                <a href="homepage-v1.html#">
-                                    <img src="images/medium/newsimage2.png" class="img-fluid" alt="">
+                                <a href="/article-detail/<%= special_news[2].id%>">
+                                    <img src="/uploads/<%= special_news[2].avatar[0] %>" class="img-fluid" alt="">
                                 </a>
                                 <div class="card__post__content bg__post-cover">
                                     <div class="card__post__category">
-                                        politics
+                                        <%= special_news[2].category %>
                                     </div>
                                     <div class="card__post__title">
                                         <h5>
-                                            <a href="homepage-v1.html#">
-                                                A classic and sturdy building with history.</a>
+                                            <a href="/article-detail/<%= special_news[2].id%>"><%= special_news[2].title %></a>
                                         </h5>
                                     </div>
                                     <div class="card__post__author-info">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <a href="homepage-v1.html#">
-                                                    by david hall
-                                                </a>
+                                                <span><%= special_news[2].author %></span>
                                             </li>
                                             <li class="list-inline-item">
-													<span>
-														Descember 09, 2020
+													<span class="date">
+														<%= special_news[2].created_at %>
 													</span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -468,158 +173,39 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="top__news__slider">
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="article__entry">
-                                <div class="article__image">
-                                    <a href="homepage-v1.html#">
-                                        <img src="images/medium/newsimage3.png" alt="" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="article__content">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-												<span class="text-primary">
-													by david hall
-												</span>,
-                                        </li>
-
-                                        <li class="list-inline-item">
-												<span>
-													descember 09, 2020
-												</span>
-                                        </li>
-                                    </ul>
-                                    <h5>
-                                        <a href="homepage-v1.html#">
-                                            Proin eu nisl et arcu iaculis placerat sollicitudin ut est.
+                        <% news.forEach(i => { %>
+                            <div class="item">
+                                <!-- Post Article -->
+                                <div class="article__entry">
+                                    <div class="article__image">
+                                        <a href="/article-detail/<%= i.id %>">
+                                            <img src="/uploads/<%= i.avatar[0] %>" alt="" class="img-fluid">
                                         </a>
-                                    </h5>
+                                    </div>
+                                    <div class="article__content">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+												<span class="text-primary">
+													<%= i.author %>
+												</span>,
+                                            </li>
+
+                                            <li class="list-inline-item">
+												<span class="date">
+													<%= i.date %>
+												</span>
+                                            </li>
+                                        </ul>
+                                        <h5>
+                                            <a href="/article-detail/<%= i.id %>">
+                                                <%= i.title %>
+                                            </a>
+                                        </h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="article__entry">
-                                <div class="article__image">
-                                    <a href="homepage-v1.html#">
-                                        <img src="images/medium/newsimage4.png" alt="" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="article__content">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-												<span class="text-primary">
-													by david hall
-												</span>,
-                                        </li>
-
-                                        <li class="list-inline-item">
-												<span>
-													descember 09, 2020
-												</span>
-                                        </li>
-                                    </ul>
-                                    <h5>
-                                        <a href="homepage-v1.html#">
-                                            Demonstration we already have the best deal
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="article__entry">
-                                <div class="article__image">
-                                    <a href="homepage-v1.html#">
-                                        <img src="images/medium/newsimage5.png" alt="" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="article__content">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-												<span class="text-primary">
-													by david hall
-												</span>,
-                                        </li>
-
-                                        <li class="list-inline-item">
-												<span>
-													descember 09, 2020
-												</span>
-                                        </li>
-                                    </ul>
-                                    <h5>
-                                        <a href="homepage-v1.html#">
-                                            formula one have best deal winner sponsor power drink
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="article__entry">
-                                <div class="article__image">
-                                    <a href="homepage-v1.html#">
-                                        <img src="images/medium/newsimage6.png" alt="" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="article__content">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-												<span class="text-primary">
-													by david hall
-												</span>,
-                                        </li>
-
-                                        <li class="list-inline-item">
-												<span>
-													descember 09, 2020
-												</span>
-                                        </li>
-                                    </ul>
-                                    <h5>
-                                        <a href="homepage-v1.html#">
-                                            many flag have a spirit freedom placerat sollicitudin ut est.
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- Post Article -->
-                            <div class="article__entry">
-                                <div class="article__image">
-                                    <a href="homepage-v1.html#">
-                                        <img src="images/medium/newsimage7.png" alt="" class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="article__content">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-												<span class="text-primary">
-													by david hall
-												</span>,
-                                        </li>
-
-                                        <li class="list-inline-item">
-												<span>
-													descember 09, 2020
-												</span>
-                                        </li>
-                                    </ul>
-                                    <h5>
-                                        <a href="homepage-v1.html#">
-                                            Proin eu nisl et arcu iaculis placerat sollicitudin ut est.
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
+                        <% }) %>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -914,131 +500,35 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="col-md-12 col-lg-4">
                     <aside class="wrapper__list__article">
                         <h4 class="border_section">popular post</h4>
                         <div class="wrapper__list-number">
 
                             <!-- List Article -->
-                            <div class="card__post__list">
-                                <div class="list-number">
+                            <% popular_news.forEach((i, index) => { %>
+                                <div class="card__post__list">
+                                    <div class="list-number">
 										<span>
-											1
+											<%= index + 1 %>
 										</span>
-                                </div>
-                                <a href="homepage-v1.html#" class="category">
-                                    covid-19
-                                </a>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-
-                                        <h5>
-                                            <a href="homepage-v1.html#">
-                                                Gegera Corona, Kekayaan Bos Zoom Nambah Rp 64 T dalam 3 Bulan - CNBC
-                                                Indonesia
-
-                                            </a>
-                                        </h5>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-
-                            <div class="card__post__list">
-                                <div class="list-number">
-										<span>
-											2
-										</span>
-                                </div>
-                                <a href="homepage-v1.html#" class="category">
-                                    Startup
-                                </a>
-                                <ul class="list-inline">
-                                    <!-- <li class="list-inline-item">
-                                        <a href="#" class="author-info">
-                                            by david hall
-                                        </a>
-
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span>
-                                            <i class="fa fa-calendar"></i>
-                                            march 01, 2020
-                                        </span>
-
-                                    </li> -->
-                                    <li class="list-inline-item">
-                                        <h5>
-                                            <a href="homepage-v1.html#">
-                                                The West had a head start on virus preparations. Why didn't it take
-                                                it?
-                                            </a>
-                                        </h5>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- List Article -->
-                            <div class="card__post__list">
-                                <div class="list-number">
-										<span>
-											3
-										</span>
-                                </div>
-                                <a href="homepage-v1.html#" class="category">
-                                    covid-19
-                                </a>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-
-                                        <h5>
-                                            <a href="homepage-v1.html#">
-                                                America's social-distancing deniers have arrived
-
-                                            </a>
-                                        </h5>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-
-                            <div class="card__post__list">
-                                <div class="list-number">
-										<span>
-											4
-										</span>
-                                </div>
-                                <a href="homepage-v1.html#" class="category">
-                                    Startup
-                                </a>
-                                <ul class="list-inline">
-                                    <!-- <li class="list-inline-item">
-                                    <a href="#" class="author-info">
-                                        by david hall
+                                    </div>
+                                    <a href="" class="category">
+                                        <%= i.category %>
                                     </a>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
 
-                                </li>
-                                <li class="list-inline-item">
-                                    <span>
-                                        <i class="fa fa-calendar"></i>
-                                        march 01, 2020
-                                    </span>
+                                            <h5>
+                                                <a href="">
+                                                    <%= i.title %>
+                                                </a>
+                                            </h5>
+                                        </li>
+                                    </ul>
 
-                                </li> -->
-                                    <li class="list-inline-item">
-                                        <h5>
-                                            <a href="homepage-v1.html#">
-                                                Egypt's soap operas defy a deadly virus for Ramadan prime time. But
-                                                at what cost?
-
-                                            </a>
-                                        </h5>
-                                    </li>
-                                </ul>
-                            </div>
+                                </div>
+                            <% }) %>
                         </div>
                     </aside>
                 </div>

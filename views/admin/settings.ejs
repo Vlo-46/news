@@ -1,0 +1,128 @@
+<%- include('layouts/Wrapper') %>
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Վահանակ</a>
+            </li>
+            <li class="breadcrumb-item active">Կարգավորումներ</li>
+        </ol>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Կարգավորումներ
+            </div>
+            <div class="card-body">
+                <div class="form-group field">
+                    <h5>Հետադարձ կապ</h5>
+                    <ul class="list-unstyled">
+                        <% contact.forEach(i => { %>
+                            <form action="/admin-settings/delete-contact-info" method="POST">
+                                <input type="hidden" name="id" value="<%= i.id %>">
+                                <li style="margin-bottom: 5px">
+                            <span>
+                                    <i class="fa <%= i.icon %>"></i>
+                            </span>
+                                    <%= i.text %>
+                                    <span style="padding-left: 15px">
+                                    <button class="delete-contact-info" type="submit">
+                                        <i class="fa fa-trash" aria-hidden="true"
+                                           style="cursor: pointer; color: #c00;;"></i>
+                                    </button>
+                                </span>
+                                </li>
+                            </form>
+
+                        <% }) %>
+                    </ul>
+                    <form action="/admin-settings/contact" method="POST">
+                        <div>
+                            <label for="icon">Icon name</label>
+                            <input type="text" class="form-control" id="icon" name="icon">
+                        </div>
+                        <div>
+                            <label for="text">Text</label>
+                            <input type="text" class="form-control" id="text" name="text">
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group field">
+                    <h5>Սոց ցանցեր</h5>
+                    <ul class="list-inline" style="display: flex; flex-wrap: wrap">
+                        <% website.forEach(i => { %>
+                            <form action="/admin-settings/delete-website" method="POST">
+                                <input type="hidden" name="id" value="<%= i.id %>">
+                                <li class="list-inline-item" style="margin: 5px">
+                                    <button class="btn btn-social rounded text-white facebook" type="submit">
+                                        <i class="fa <%= i.icon %>"></i>
+                                    </button>
+                                </li>
+                            </form>
+
+                        <% }) %>
+                    </ul>
+                    <form action="/admin-settings/website" method="POST">
+                        <div>
+                            <label for="icon">Icon name</label>
+                            <input type="text" class="form-control" id="icon" name="icon">
+                        </div>
+                        <div>
+                            <label for="link">Link</label>
+                            <input type="text" class="form-control" id="link" name="link">
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Չեղարկել</button>
+                <a class="btn btn-primary" href="/login/logout">Դուրս գալ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('layouts/dashboard-footer') %>

@@ -463,3 +463,16 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100px;
   height: 100px;
 }
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field div {
+  margin: 10px 0;
+}
+
+.delete-contact-info {
+  background: transparent;
+  border: none;
+}
