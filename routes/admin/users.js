@@ -7,7 +7,8 @@ router.get('/', async (req, res) => {
     const users = await User.find()
 
     res.render('admin/users', {
-        users
+        users,
+        title: 'Օգտատերեր'
     })
 })
 

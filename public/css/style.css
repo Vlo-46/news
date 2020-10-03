@@ -11127,6 +11127,7 @@ a.text-dark:hover {
     height: 100%;
     min-height: 1px;
     display: none;
+    outline: none !important;
 }
 
 [dir="rtl"] .slick-slide {

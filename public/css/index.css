@@ -4,3 +4,11 @@
     display: block;
     cursor: pointer;
 }
+
+.total-views {
+    margin-top: 20px;
+    display: flex !important;
+    justify-content: flex-end;
+    border: 1px solid #eee;
+    padding: 10px;
+}

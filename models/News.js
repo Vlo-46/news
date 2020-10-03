@@ -6,13 +6,13 @@ const NewsSchema = new Schema({
     category: String,
     avatar: Array,
     author: String,
-    views: String,
+    views: Number,
     tag: Array,
-    created_at: Date,
+    created_at: String,
     video: String,
     header_news: Boolean,
     special: Boolean,
-    popular: Boolean
+    popular: Boolean,
 })
 
 module.exports = model('News', NewsSchema)

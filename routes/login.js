@@ -1,12 +1,17 @@
 const {Router} = require('express')
 const router = Router()
 const User = require('../models/User')
+const Logo = require('../models/Logo')
+const News = require('../models/News')
 
-router.get('/', (req, res) => {
+
+router.get('/', async (req, res) => {
+    const header_news = await News.find({header_news: true})
+    const logo = await Logo.find()
     if (req.session.isAuthenticated) {
         res.redirect('back')
     } else {
-        res.render('login')
+        res.render('login', {header_news, logo, title: 'Մուտք'})
     }
 
 })

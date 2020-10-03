@@ -7,10 +7,7 @@
         <ul class="breadcrumbs mb-4 text-center">
             <li class="breadcrumbs__item">
                 <a href="/" class="breadcrumbs__url">
-                    <i class="fa fa-home"></i> Home</a>
-            </li>
-            <li class="breadcrumbs__item">
-                <span class="breadcrumbs__url"><%= news.category %></span>
+                    <i class="fa fa-home"></i> Գլխավոր</a>
             </li>
             <li class="breadcrumbs__item breadcrumbs__item--current">
                 <%= news.title %>
@@ -18,156 +15,252 @@
         </ul>
         <div class="row">
             <div class="col-lg-12">
-                <div class="go__explore-title">
-                    <h1><%= news.title %></h1>
-                    <p><%= news.description %></p>
-                </div>
-
-                <hr>
-                <div class="wrap__article-detail-info">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <span>by</span>
-                            <a href="article-detail-v3.html#">
-                                <%= news.author %>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <div class="card__post-carousel">
+                            <% news.avatar.forEach(i => { %>
+                                <div class="item">
+                                    <!-- Post Article -->
+                                    <div class="card__post">
+                                        <div class="card__post__body">
+                                            <img src="/uploads/<%= i %>" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="wrap__article-detail-content">
+                            <div class="total-views">
+                                <!-- AddToAny BEGIN -->
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                    <a class="a2a_button_facebook"></a>
+                                    <a class="a2a_button_facebook_messenger"></a>
+                                    <a class="a2a_button_pinterest"></a>
+                                    <a class="a2a_button_twitter"></a>
+                                    <a class="a2a_button_telegram"></a>
+                                    <a class="a2a_button_vk"></a>
+                                    <a class="a2a_button_odnoklassniki"></a>
+                                    <a class="a2a_button_email"></a>
+                                    <a class="a2a_button_google_gmail"></a>
+                                    <a class="a2a_button_whatsapp"></a>
+                                    <a class="a2a_button_viber"></a>
+                                    <a class="a2a_button_copy_link"></a>
+                                </div>
+                                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                <!-- AddToAny END -->
+                            </div>
+                            <div class="go__explore-title">
+                                <h1><%= news.title %></h1>
+                                <p><i class="fa fa-eye" aria-hidden="true"></i><small
+                                            style="padding-left: 10px">20</small></p>
+                            </div>
+                            <div class="wrap__article-detail-info mt-3">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <span>by</span>
+                                        <a href="article-detail-v3.html#">
+                                            <%= news.author %>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
                                 <span class="text-dark text-capitalize ml-1">
                                     <%= news.created_at %>
                                 </span>
-                        </li>
-                        <li class="list-inline-item">
+                                    </li>
+                                    <li class="list-inline-item">
                                 <span class="text-dark text-capitalize">
                                     in
                                 </span>
-                            <a href="article-detail-v3.html#">
-                                <%= news.category %>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!--                <figure>-->
-                <!--                    <img src="/uploads/<%= news.avatar[0] %>" alt="" class="img-fluid">-->
-                <!--                </figure>-->
-                <div class="row" style="margin: 50px 0">
-                    <% news.avatar.forEach(i => { %>
-                        <div class="col-sm-12 col-md-4 col-lg-2 detail-imgs">
-                            <img src="/uploads/<%= i %>" alt="">
-                        </div>
-                    <% }) %>
-                </div>
-
-
-                <div class="wrap__article-detail-content">
-                    <div class="total-views">
-                        <div class="total-views-read">
-                            15.k
-                            <span>views</span>
-                        </div>
-
-                        <!--                        tags-->
-                        <ul class="list-inline">
-
-                            <li class="list-inline-item">
-                                <a class="btn btn-social-o facebook" href="article-detail-v3.html#">
-                                    <i class="fa fa-facebook-f"></i>
-                                    <span>facebook</span>
-                                </a>
-
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-social-o twitter" href="article-detail-v3.html#">
-                                    <i class="fa fa-twitter"></i>
-                                    <span>twitter</span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-social-o whatsapp" href="article-detail-v3.html#">
-                                    <i class="fa fa-whatsapp"></i>
-                                    <span>whatsapp</span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-social-o telegram" href="article-detail-v3.html#">
-                                    <i class="fa fa-telegram"></i>
-                                    <span>telegram</span>
-                                </a>
-                            </li>
-
-                            <li class="list-inline-item">
-                                <a class="btn btn-linkedin-o linkedin" href="article-detail-v3.html#">
-                                    <i class="fa fa-linkedin"></i>
-                                    <span>linkedin</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                        <!--                        tags end-->
-                    </div>
-                    <p class="has-drop-cap-container ">
-                        <%= news.description %>
-                    </p>
-                    <div class="clearfix"></div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <iframe width="100%" height="611" src="https://www.youtube.com/embed/<%= news.video %>"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-10 mx-auto">
-                        <div class="text-center">
-                            <!-- News Tags -->
-                            <div class="blog-tags">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <i class="fa fa-tags">
-                                        </i>
+                                        <a href="article-detail-v3.html#">
+                                            <%= news.category %>
+                                        </a>
                                     </li>
-                                    <% news.tag.forEach(tag => { %>
-                                        <li class="list-inline-item">
-                                            <a href="">
-                                                <%= tag %>
-                                            </a>
-                                        </li>
-                                    <% }) %>
-
                                 </ul>
                             </div>
-                        </div>
-
-
-                        <div class="row">
-                            <% if(prev[0]) { %>
-                                <div class="col-md-6">
-                                    <div class="single_navigation-prev mb-5">
-                                        <a href="/article-detail/<%= prev[0].id %>">
-                                            <span>previous post</span>
-                                            <%= prev[0].title %>
-                                        </a>
+                            <p class="has-drop-cap-container mb-5 mt-5">
+                                <%= news.description %>
+                            </p>
+                            <div class="clearfix"></div>
+                            <% if(news.video) { %>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <iframe width="100%" height="611"
+                                                src="https://www.youtube.com/embed/<%= news.video %>"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen>
+                                        </iframe>
                                     </div>
                                 </div>
                             <% } %>
-                            <% if(next[0]) { %>
-                                <div class="col-md-6">
-                                    <div class="single_navigation-next text-left text-md-right mb-5">
-                                        <a href="/article-detail/<%= next[0].id %>">
-                                            <span>next post</span>
-                                            <%= next[0].title %>
-                                        </a>
+                            <div class="col-md-10 mx-auto">
+                                <div class="text-center mb-3 mt-3">
+                                    <!-- News Tags -->
+                                    <div class="blog-tags">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-tags">
+                                                </i>
+                                            </li>
+                                            <% news.tag.forEach(tag => { %>
+                                                <li class="list-inline-item">
+                                                    <a href="">
+                                                        <%= tag %>
+                                                    </a>
+                                                </li>
+                                            <% }) %>
+
+                                        </ul>
                                     </div>
                                 </div>
-                            <% } %>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <aside class="wrapper__list__article">
+                            <h4 class="border_section">Facebook</h4>
+                            <!-- widget Social media -->
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FArmnewstime-815333275475715&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                    width="100%" height="500" style="border:none;overflow:hidden" scrolling="no"
+                                    frameborder="0" allowTransparency="true" allow="encrypted-media">
+                            </iframe>
+                        </aside>
+
+                        <% prev.forEach(i => { %>
+                            <div class="col-md-12">
+                                <!-- Post Article -->
+                                <div class="article__entry">
+                                    <div class="article__image">
+                                        <a href="/article-detail/<%= i.id %>">
+                                            <img src="/uploads/<%= i.avatar[0] %>" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="article__content">
+                                        <div class="article__category">
+                                            <%= i.category %>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <span class="text-primary">
+                                                    by <%= i.author %>
+                                                </span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="text-dark text-capitalize">
+                                                    <%= i.created_at %>
+                                                </span>
+                                            </li>
+
+                                        </ul>
+                                        <h5>
+                                            <a href="/article-detail/<%= i.id %>">
+                                                <%= i.title %>
+                                            </a>
+                                        </h5>
+                                        <!--                                        <p>-->
+                                        <!--                                            Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu-->
+                                        <!--                                            iaculis placerat sollicitudin ut-->
+                                        <!--                                            est. In fringilla dui dui.-->
+                                        <!--                                        </p>-->
+                                        <a href="/article-detail/<%= i.id %>"
+                                           class="btn btn-outline-primary mb-4 text-capitalize"> Կարդալ ավելին</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+
+                        <% next.forEach(i => { %>
+                            <div class="col-md-12">
+                                <!-- Post Article -->
+                                <div class="article__entry">
+                                    <div class="article__image">
+                                        <a href="/article-detail/<%= i.id %>">
+                                            <img src="/uploads/<%= i.avatar[0] %>" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="article__content">
+                                        <div class="article__category">
+                                            <%= i.category %>
+                                        </div>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <span class="text-primary">
+                                                    by <%= i.author %>
+                                                </span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="text-dark text-capitalize">
+                                                    <%= i.created_at %>
+                                                </span>
+                                            </li>
+
+                                        </ul>
+                                        <h5>
+                                            <a href="/article-detail/<%= i.id %>">
+                                                <%= i.title %>
+                                            </a>
+                                        </h5>
+                                        <!--                                        <p>-->
+                                        <!--                                            Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu-->
+                                        <!--                                            iaculis placerat sollicitudin ut-->
+                                        <!--                                            est. In fringilla dui dui.-->
+                                        <!--                                        </p>-->
+                                        <a href="/article-detail/<%= i.id %>"
+                                           class="btn btn-outline-primary mb-4 text-capitalize">Կարդալ ավելին</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
+
+                <% if(category) { %>
+                    <div class="popular__news-header-carousel mt-5">
+                        <div class="container">
+                            <h4 class="border_section mb-3">Նման նորություններ</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="top__news__slider">
+                                        <% category.forEach(i => { %>
+                                            <div class="item">
+                                                <!-- Post Article -->
+                                                <div class="article__entry">
+                                                    <div class="article__image">
+                                                        <a href="/article-detail/<%= i.id %>">
+                                                            <img src="/uploads/<%= i.avatar[0] %>" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="article__content">
+                                                        <h5>
+                                                            <a href="/article-detail/<%= i.id %>">
+                                                                <%= i.title %>
+                                                            </a>
+                                                        </h5>
+                                                        <ul class="list-inline">
+                                                            <li class="list-inline-item">
+												<span class="text-primary">
+													<%= i.author %>
+												</span>
+                                                            </li>
+
+                                                            <li class="list-inline-item">
+												<span class="date">
+													<%= i.date %>
+												</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
             </div>
         </div>
     </div>

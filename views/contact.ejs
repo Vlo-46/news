@@ -9,13 +9,10 @@
                 <ul class="breadcrumbs bg-light mb-4">
                     <li class="breadcrumbs__item">
                         <a href="index.html" class="breadcrumbs__url">
-                            <i class="fa fa-home"></i> Home</a>
+                            <i class="fa fa-home"></i> Գլխավոր</a>
                     </li>
                     <li class="breadcrumbs__item">
-                        <a href="index.html" class="breadcrumbs__url">News</a>
-                    </li>
-                    <li class="breadcrumbs__item breadcrumbs__item--current">
-                        World
+                        <a href="index.html" class="breadcrumbs__url">Կապ</a>
                     </li>
                 </ul>
             </div>
@@ -34,40 +31,25 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group form-group-name">
-                            <label>Your name <span class="required"></span></label>
+                            <label>ԱՆուն <span class="required"></span></label>
                             <input type="text" class="form-control" name="name" required="">
 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-name">
-                            <label>Your email <span class="required"></span></label>
+                            <label>Էլ․ հասցե <span class="required"></span></label>
                             <input type="email" class="form-control" name="email" required="">
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group form-group-name">
-                            <label>website <span class="required"></span></label>
-                            <input type="text" class="form-control" name="website" required="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-name">
-                            <label>Subject <span class="required"></span></label>
-                            <input type="text" class="form-control" name="subject" required="">
 
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Your message </label>
+                            <label>Հաղորդագրություն </label>
                             <textarea class="form-control" rows="8" name="message"></textarea>
                         </div>
                         <div class="form-group float-right mb-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Ուղարկել</button>
                         </div>
                     </div>
                 </div>
@@ -93,7 +75,8 @@
                         <ul class="list-inline">
                             <% website.forEach(i => { %>
                                 <li class="list-inline-item">
-                                    <a href="<%= i.link %>" class="btn btn-social rounded text-white facebook">
+                                    <a href="<%= i.link %>" class="btn btn-social rounded text-black"
+                                       style="border: 1px solid #000;border-radius: 50px !important;">
                                         <i class="fa <%= i.icon %>"></i>
                                     </a>
                                 </li>

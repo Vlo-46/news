@@ -19,24 +19,44 @@
                 Մեր մասին էջի տվյալներ
             </div>
             <div class="card-body">
+                <div class="about-images-field row">
+                    <% images.forEach(i => { %>
+                        <div class="about-img col-md-3">
+                            <img src="/uploads/<%= i.avatar %>" alt="">
+                            <form class="remove-about-imgs" method="POST" action="/admin-about/delete">
+                                <input type="hidden" name="id" value="<%= i.id %>">
+                                <button><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="card-body">
                 <div class="form-group field">
-                    <form action="/admin-about/about" method="POST" accept="image/x-png,image/gif,image/jpeg"
+                    <form action="/admin-about/logo" method="POST" accept="image/x-png,image/gif,image/jpeg"
                           enctype="multipart/form-data">
                         <div>
-                            <label for="">Մեր մասին էջի նկար</label>
+                            <label for="">Մեր մասին էջի նկարներ</label>
                             <br>
                             <input type="file" name="avatar">
                         </div>
                         <div>
-                            <label for="description">Նկարագրություն</label>
-                            <textarea name="description" class="form-control"><%= about[0].description %></textarea>
-                        </div>
-                        <div>
-                            <input type="hidden" value="<%= about[0].id %>" name="id">
-                            <button class="btn btn-primary" type="submit">Edit</button>
+                            <button class="btn btn-primary" type="submit">Add</button>
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="card-body">
+                <form action="/admin-about/description" method="POST">
+                    <div>
+                        <label for="description">Նկարագրություն</label>
+                        <textarea name="description" class="form-control"><%= about[0].description %></textarea>
+                    </div>
+                    <div>
+                        <input type="hidden" value="<%= about[0].id %>" name="id">
+                        <button class="btn btn-primary" type="submit">Edit</button>
+                    </div>
+                </form>
             </div>
             <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
         </div>

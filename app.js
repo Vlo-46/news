@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose')
+const errorHandler = require('./middlewares/error')
 
 const keys = require('./keys')
 
@@ -32,7 +33,6 @@ const aboutRouter = require('./routes/about');
 const contactRouter = require('./routes/contact');
 const categoryRouter = require('./routes/category');
 const articleDetailRouter = require('./routes/article-detail');
-const error404Router = require('./routes/404');
 const searchResultRouter = require('./routes/search-result');
 const loginRouter = require('./routes/login')
 
@@ -41,7 +41,6 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/category', categoryRouter);
 app.use('/article-detail', articleDetailRouter);
-app.use('/error-404', error404Router);
 app.use('/search-result', searchResultRouter);
 app.use('/login', loginRouter)
 
@@ -51,14 +50,18 @@ const adminUsersRouter = require('./routes/admin/users')
 const adminNewsRouter = require('./routes/admin/news')
 const adminAboutRouter = require('./routes/admin/about')
 const adminSettingsRouter = require('./routes/admin/settings')
+const adminLiveRouter = require('./routes/admin/live')
 
 app.use('/admin-users', adminUsersRouter)
 app.use('/admin-news', adminNewsRouter)
 app.use('/admin-about', adminAboutRouter)
 app.use('/admin-settings', adminSettingsRouter)
+app.use('/admin-live', adminLiveRouter)
 
 
 const PORT = process.env.PORT || 3000;
+
+app.use(errorHandler);
 
 function start() {
     try {
