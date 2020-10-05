@@ -13,28 +13,28 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="">Title:</label>
+                                <label for="">Վերնագիր:</label>
                                 <input type="text" class="form-control" name="title" value="<%= news.title %>">
                             </div>
                             <div class="form-group">
-                                <label for="">Description:</label>
+                                <label for="">Նկարագրություն:</label>
                                 <textarea class="form-control" name="description"><%= news.description %></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="category">Category:</label>
+                                <label for="category">Բաժին:</label>
                                 <select name="category" id="category" class="form-control">
                                     <option value="<%= news.category %>" selected disabled><%= news.category %></option>
-                                    <% category.forEach(i => {%>
+                                    <% category.forEach(i => { %>
                                         <option value="<%= i.category %>"><%= i.category %></option>
-                                    <%}) %>
+                                    <% }) %>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="tag">Tag</label>
+                                <label for="tag">Նշումներ</label>
                                 <input type="text" class="form-control" id="tag" name="tag" value="<%= news.tag %>">
                             </div>
                             <div class="form-group">
-                                <label for="author">Author</label>
+                                <label for="author">Հեղինակ</label>
                                 <input type="text" class="form-control" id="author" name="author"
                                        value="<%= news.author %>">
                             </div>
@@ -45,39 +45,49 @@
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <label for="">Add to Header news</label>
+                                    <label for="">Ավելացնել գլխամասային նորությունների շարքին</label>
                                     <input type="radio" name="header_news" value="1">
                                 </div>
                                 <div>
-                                    <label for="">Delete from Header news</label>
+                                    <label for="">Հանել գլխամասային նորությունների շարքից</label>
                                     <input type="radio" name="header_news" value="0">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <label for="">Add to Special news</label>
+                                    <label for="">Ավելացնել հատուկ նորությունների շարքին</label>
                                     <input type="radio" name="special" value="1">
                                 </div>
                                 <div>
-                                    <label for="">Delete from Special news</label>
+                                    <label for="">Հանել հատուկ նորությունների շարքից</label>
                                     <input type="radio" name="special" value="0">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div>
-                                    <label for="">Add to Popular news</label>
+                                    <label for="">Ավելացնել թեժ նորությունների շարքին</label>
                                     <input type="radio" name="popular" value="1">
                                 </div>
                                 <div>
-                                    <label for="">Delete from Popular news</label>
+                                    <label for="">Հանել թեժ նորությունների շարքից</label>
                                     <input type="radio" name="popular" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="">Ավելացնել հրատապ նորությունների շարքին</label>
+                                    <input type="radio" name="urgently" value="1">
+                                </div>
+                                <div>
+                                    <label for="">Հանել հրատապ նորությունների շարքից</label>
+                                    <input type="radio" name="urgently" value="0">
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <input type="hidden" name="id" value="<%= news._id %>">
-                            <button type="submit" class="btn btn-primary">Edit</button>
-                            <a href="/admin-news" class="btn btn-default" data-dismiss="modal">Close</a>
+                            <button type="submit" class="btn btn-primary">Փոփոխել</button>
+                            <a href="/admin-news" class="btn btn-default" data-dismiss="modal">Փակել</a>
                         </div>
                     </form>
                 </div>

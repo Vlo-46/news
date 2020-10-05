@@ -13,6 +13,7 @@ const NewsSchema = new Schema({
     header_news: Boolean,
     special: Boolean,
     popular: Boolean,
+    urgently: Boolean
 })
 
 module.exports = model('News', NewsSchema)

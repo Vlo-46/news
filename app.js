@@ -35,6 +35,7 @@ const categoryRouter = require('./routes/category');
 const articleDetailRouter = require('./routes/article-detail');
 const searchResultRouter = require('./routes/search-result');
 const loginRouter = require('./routes/login')
+const urgentlyRouter = require('./routes/urgently')
 
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
@@ -43,6 +44,7 @@ app.use('/category', categoryRouter);
 app.use('/article-detail', articleDetailRouter);
 app.use('/search-result', searchResultRouter);
 app.use('/login', loginRouter)
+app.use('/urgently', urgentlyRouter)
 
 //admin routes
 

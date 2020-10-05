@@ -28,16 +28,13 @@
                 <img src="images/loading.png" alt="Alternate Text" height="100"/>
             </li>
             <li>
-
                 <div class="spinner">
                     <div class="rect1"></div>
                     <div class="rect2"></div>
                     <div class="rect3"></div>
                     <div class="rect4"></div>
                     <div class="rect5"></div>
-
                 </div>
-
             </li>
             <li>
                 <p>Loading</p>
@@ -127,7 +124,7 @@
                             <a class="nav-link active" href="/">Գլխավոր</a>
                         </li>
                         <li class="nav-item dropdown has-megamenu">
-                            <a class="nav-link dropdown-toggle" href="homepage-v1.html#" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="/urgently/1">
                                 Նորություններ </a>
                             <div class="dropdown-menu animate fade-down megamenu mx-auto" role="menu">
                                 <div class="container wrap__mobile-megamenu">
@@ -137,7 +134,7 @@
                                         <!-- Popular news carousel -->
                                         <div class="popular__news-header-carousel">
                                             <div class="top__news__slider">
-                                                <% header_news.forEach(i => { %>
+                                                <% urgently_news.forEach(i => { %>
                                                     <div class="item">
                                                         <!-- Post Article -->
                                                         <div class="article__entry">
@@ -195,22 +192,20 @@
                     <div class="top-search navigation-shadow">
                         <div class="container">
                             <div class="input-group ">
-                                <form action="homepage-v1.html#">
-
+                                <form action="/search-result/1" method="GET">
                                     <div class="row no-gutters mt-3">
                                         <div class="col">
                                             <input class="form-control border-secondary border-right-0 rounded-0"
-                                                   type="search" value="" placeholder="Search "
-                                                   id="example-search-input4">
+                                                   type="search" value="" placeholder="Որոնել"
+                                                   id="example-search-input4" name="search">
                                         </div>
                                         <div class="col-auto">
-                                            <a class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
-                                               href="search-result.html">
+                                            <button type="submit"
+                                                    class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right">
                                                 <i class="fa fa-search"></i>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
@@ -227,29 +222,39 @@
         <div class="modal-dialog modal-dialog-aside" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="widget__form-search-bar  ">
+                    <form action="/search-result/1" method="GET" class="widget__form-search-bar  ">
                         <div class="row no-gutters">
                             <div class="col">
                                 <input class="form-control border-secondary border-right-0 rounded-0" value=""
                                        placeholder="Search">
                             </div>
                             <div class="col-auto">
-                                <button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right">
+                                <button type="submit"
+                                        class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <p>© 2020 <a href="http://retenvi.com"
-                                 title="Premium WordPress news &amp; magazine theme">Magzrenvi</a>
-                        -
-                        Premium template news, blog & magazine &amp;
-                        magazine theme by <a href="http://retenvi.com" title="retenvi">RETENVI.COM</a>.</p>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <a href="/">Գլխավոր</a>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <a href="/category/1">Լուրեր</a>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <a href="/about">Մեր մասին</a>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <a href="/contact">Կապ</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> <!-- modal-bialog .// -->

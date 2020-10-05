@@ -6,10 +6,10 @@ const Logo = require('../models/Logo')
 const Tags = require('../models/Tags')
 
 router.get('/:page', async (req, res) => {
-    let perPage = 8
+    let perPage = 7
     let page = req.params.page || 1
 
-    let news = await (await News.find()).length;
+    let videos = await News.find();
 
     const urgently_news = await News.find({urgently: true})
 
@@ -31,7 +31,7 @@ router.get('/:page', async (req, res) => {
     array_tags = new Set(array_tags)
 
     News
-        .find()
+        .find({urgently: true})
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .sort({_id: -1})
@@ -39,15 +39,16 @@ router.get('/:page', async (req, res) => {
             News.countDocuments().exec(function (err, count) {
                 // let currentpages = '/result-search/'+page
                 if (err) return next(err)
-                res.render('category', {
+                res.render('urgently', {
                     news: news,
                     current: page,
                     pages: Math.ceil(count / perPage),
                     tags: array_tags,
                     live,
-                    urgently_news,
                     logo,
-                    title: 'Բոլորը'
+                    title: 'Բոլորը',
+                    videos,
+                    urgently_news
                 })
             })
         })

@@ -60,7 +60,7 @@
                                 <td><%= i.author %></td>
                                 <td><span class="date"><%= i.created_at %></span></td>
                                 <td>
-                                    <a href="/admin-news/edit/<%= i.id %>" target="_blank" class="btn btn-success">Edit</a>
+                                    <a href="/admin-news/edit/<%= i.id %>" target="_blank" class="btn btn-success">Փոփոխել</a>
                                 </td>
                                 <td>
                                     <form action="/admin-news/delete" method="POST">
@@ -127,15 +127,15 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="">Title:</label>
+                    <label for="">Վերնագիր:</label>
                     <input type="text" class="form-control" name="title">
                 </div>
                 <div class="form-group">
-                    <label for="">Description:</label>
+                    <label for="">Նկարագրություն:</label>
                     <textarea class="form-control" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="category">Category:</label>
+                    <label for="category">Բաժին:</label>
                     <select name="category" id="category" class="form-control">
                         <% category.forEach(j => { %>
                             <option value="<%= j.category %>"><%= j.category %></option>
@@ -143,15 +143,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="avatar">Image</label>
+                    <label for="avatar">Նկար</label>
                     <input type="file" name="avatar" id="avatar" multiple>
                 </div>
                 <div class="form-group">
-                    <label for="tag">Tag</label>
+                    <label for="tag">Նշումներ</label>
                     <input type="text" class="form-control" id="tag" name="tag">
                 </div>
                 <div class="form-group">
-                    <label for="author">Author</label>
+                    <label for="author">Հեղինակ</label>
                     <input type="text" class="form-control" id="author" name="author">
                 </div>
                 <div class="form-group">
@@ -159,21 +159,25 @@
                     <input type="text" class="form-control" id="video" name="video">
                 </div>
                 <div class="form-group">
-                    <label for="">Add to Header news</label>
+                    <label for="">Ավելացնել գլխամասային նորությունների շարքին</label>
                     <input type="checkbox" name="header_news" value="1">
                 </div>
                 <div class="form-group">
-                    <label for="">Add to Special news</label>
+                    <label for="">Ավելացնել հատուկ նորությունների շարքին</label>
                     <input type="checkbox" name="special" value="1">
                 </div>
                 <div class="form-group">
-                    <label for="">Add to Popular news</label>
+                    <label for="">Ավելացնել թեժ նորությունների շարքին</label>
                     <input type="checkbox" name="popular" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="">Ավելացնել հրատապ նորությունների շարքին</label>
+                    <input type="checkbox" name="urgently" value="1">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Add</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Ավելացնել</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Փակել</button>
             </div>
         </form>
     </div>

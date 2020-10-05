@@ -8,13 +8,13 @@ const Logo = require('../models/Logo')
 router.get('/', async (req,res) => {
     const contact = await Contact.find()
     const website = await Website.find()
-    const header_news = await News.find({header_news: true})
+    const urgently_news = await News.find({urgently: true})
     const logo = await Logo.find()
 
     res.render('contact', {
         contact,
         website,
-        header_news,
+        urgently_news,
         logo,
         title: 'Կապ'
     })

@@ -18,7 +18,7 @@ let upload = multer({storage: storage}).array('avatar', 10);
 
 
 router.get('/', async (req, res) => {
-    const news = await News.find().sort({created_at: -1})
+    const news = await News.find().sort({_id: -1})
     const category = await Category.find()
 
     res.render('admin/news', {
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async function (req, res, next) {
     upload(req, res, async function (err) {
-        const {title, description, category, author, tag, header_news, special, popular, video} = req.body;
+        const {title, description, category, author, tag, header_news, special, popular, urgently, video} = req.body;
 
         let img = req.files;
         let avatar = []
@@ -50,7 +50,7 @@ router.post('/add', async function (req, res, next) {
         let tags = tag.split(",")
 
         const newPost = new News({
-            title, description, category, author, header_news, special, popular,
+            title, description, category, author, header_news, special, popular, urgently,
             tag: tags,
             video: url,
             created_at: today,

@@ -170,6 +170,64 @@
 </section>
 <!-- End Popular news -->
 
+<!--urgently news-->
+
+<% if(urgently_news) { %>
+    <section>
+        <div class="urgently container">
+            <aside class="wrapper__list__article">
+                <h4 class="border_section mb-5 mt-5">Հրատապ լուրեր</h4>
+                <div class="row">
+                    <% urgently.forEach(i => { %>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+                            <div class="item">
+                                <!-- Post Article -->
+                                <div class="card__post card__post-list">
+                                    <div class="image-sm">
+                                        <a href="/article-detail/<%= i.id %>">
+                                            <img src="/uploads/<%= i.avatar[0] %>" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="card__post__body ">
+                                        <div class="card__post__content">
+                                            <div class="card__post__title">
+                                                <h6>
+                                                    <a href="/article-detail/<%= i.id %>">
+                                                        <%= i.title %>
+                                                    </a>
+                                                </h6>
+                                            </div>
+                                            <div class="card__post__author-info mb-2">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+													<span class="text-primary">
+														<%= i.author %>
+													</span>
+                                                    </li>
+                                                    <li class="list-inline-item">
+													<span class="text-dark text-capitalize date">
+														<%= i.created_at %>
+													</span>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+<% } %>
+
+
+<!--end urgently news-->
+
 <!-- Popular news category -->
 <section class="pt-0">
     <!-- Popular news category -->
@@ -178,7 +236,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <aside class="wrapper__list__article">
-                        <h4 class="border_section">Լուրեր</h4>
+                        <h4 class="border_section">Օրվա լուրեր</h4>
 
                         <div class="wrapp__list__article-responsive">
                             <!-- Post Article List -->
@@ -300,14 +358,13 @@
                                     <!-- Post Article -->
                                     <div class="article__entry">
                                         <div class="article__image">
-                                            <a href="/article-detail/<%= i.id %>">
-                                                <iframe width="100%" height="250px"
-                                                        src="https://www.youtube.com/embed/<%= i.video %>"
-                                                        frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen>
-                                                </iframe>
-                                            </a>
+                                            <button type="submit" style="border: none; outline: none"
+                                                    data-toggle="modal"
+                                                    data-target="#exampleModal"
+                                                    data-id="<%= i.video %>">
+                                                <img src="https://img.youtube.com/vi/<%= i.video %>/0.jpg" alt=""
+                                                     style="cursor: pointer;">
+                                            </button>
                                         </div>
                                         <div class="article__content">
                                             <h5>
@@ -342,6 +399,18 @@
 </section>
 <!-- End Popular news category -->
 
+
+<div class="modal fade modal-video-field" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body video-field" id="news_video">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     if (document.getElementById('iframe_id').innerText) {
         let iframe = document.getElementById('iframe_id').innerText
@@ -351,5 +420,7 @@
     }
 
 </script>
+
+<!--https://img.youtube.com/vi/dyOKgeZZINU/0.jpg-->
 
 <%- include('layouts/footer') %>

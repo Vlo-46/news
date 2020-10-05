@@ -11,7 +11,7 @@
                             <i class="fa fa-home"></i> Գլխավոր</a>
                     </li>
                     <li class="breadcrumbs__item">
-                        <span class="breadcrumbs__url">Լուրեր</span>
+                        <span class="breadcrumbs__url">Հրատապ լուրեր</span>
                     </li>
                 </ul>
             </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-8">
                 <aside class="wrapper__list__article ">
-                    <h4 class="border_section">Լուրեր</h4>
+                    <h4 class="border_section">Հրատապ լուրեր</h4>
 
                     <div class="row">
                         <% news.forEach(i => { %>
@@ -69,7 +69,7 @@
                                 <% if (current == 1) { %>
                                     <a>First</a>
                                 <% } else { %>
-                                    <a href="/category/1">First</a>
+                                    <a href="/urgently/1">First</a>
                                 <% } %>
                                 <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
                                 <% if (i !== 1) { %>
@@ -79,7 +79,7 @@
                                     <% if (i == current) { %>
                                         <a><%= i %></a>
                                     <% } else { %>
-                                        <a href="/category/<%= i %>"><%= i %></a>
+                                        <a href="/urgently/<%= i %>"><%= i %></a>
                                     <% } %>
                                     <% if (i == Number(current) + 4 && i < pages) { %>
                                         <a>...</a>
@@ -88,7 +88,7 @@
                                 <% if (current == pages) { %>
                                     <a>Last</a>
                                 <% } else { %>
-                                    <a href="/category/<%= pages %>">Last</a>
+                                    <a href="/urgently/<%= pages %>">Last</a>
                                 <% } %>
                             </div>
                         <% } %>
@@ -147,7 +147,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="top__news__slider">
-                            <% news.forEach(i => { %>
+                            <% videos.forEach(i => { %>
                                 <% if(i.video) { %>
                                     <div class="item">
                                         <!-- Post Article -->

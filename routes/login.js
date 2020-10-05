@@ -6,12 +6,12 @@ const News = require('../models/News')
 
 
 router.get('/', async (req, res) => {
-    const header_news = await News.find({header_news: true})
+    const urgently_news = await News.find({urgently: true})
     const logo = await Logo.find()
     if (req.session.isAuthenticated) {
         res.redirect('back')
     } else {
-        res.render('login', {header_news, logo, title: 'Մուտք'})
+        res.render('login', {urgently_news, logo, title: 'Մուտք'})
     }
 
 })
