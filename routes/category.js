@@ -11,7 +11,7 @@ router.get('/:page', async (req, res) => {
 
     let news = await (await News.find()).length;
 
-    const urgently_news = await News.find({urgently: true})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
 
     let live = await Live.find()
 

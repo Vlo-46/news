@@ -6,7 +6,7 @@ const News = require('../models/News')
 
 
 router.get('/', async (req, res) => {
-    const urgently_news = await News.find({urgently: true})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
     const logo = await Logo.find()
     if (req.session.isAuthenticated) {
         res.redirect('back')

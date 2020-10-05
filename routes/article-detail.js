@@ -13,7 +13,7 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id;
     const news = await News.findById(id)
 
-    const urgently_news = await News.find({urgently: true})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
     const logo = await Logo.find()
 
     let prev = await News.find({_id: {$lt: id}}).sort({_id: -1}).limit(2)

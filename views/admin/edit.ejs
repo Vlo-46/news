@@ -44,44 +44,56 @@
                                        value="<%= news.video %>">
                             </div>
                             <div class="form-group">
-                                <div>
-                                    <label for="">Ավելացնել գլխամասային նորությունների շարքին</label>
-                                    <input type="radio" name="header_news" value="1">
-                                </div>
-                                <div>
-                                    <label for="">Հանել գլխամասային նորությունների շարքից</label>
-                                    <input type="radio" name="header_news" value="0">
-                                </div>
+                                <% if(news.header_news === true) {%>
+                                    <div>
+                                        <label for="">Հանել գլխամասային նորությունների շարքից</label>
+                                        <input type="radio" name="header_news" value="0">
+                                    </div>
+                                <%} else {%>
+                                        <div>
+                                            <label for="">Ավելացնել գլխամասային նորությունների շարքին</label>
+                                            <input type="radio" name="header_news" value="1">
+                                        </div>
+                                <%} %>
                             </div>
                             <div class="form-group">
-                                <div>
-                                    <label for="">Ավելացնել հատուկ նորությունների շարքին</label>
-                                    <input type="radio" name="special" value="1">
-                                </div>
-                                <div>
-                                    <label for="">Հանել հատուկ նորությունների շարքից</label>
-                                    <input type="radio" name="special" value="0">
-                                </div>
+                                <% if(news.special === true) {%>
+                                    <div>
+                                        <label for="">Հանել հատուկ նորությունների շարքից</label>
+                                        <input type="radio" name="special" value="0">
+                                    </div>
+                                <%} else {%>
+                                        <div>
+                                            <label for="">Ավելացնել հատուկ նորությունների շարքին</label>
+                                            <input type="radio" name="special" value="1">
+                                        </div>
+                                <%} %>
                             </div>
                             <div class="form-group">
-                                <div>
-                                    <label for="">Ավելացնել թեժ նորությունների շարքին</label>
-                                    <input type="radio" name="popular" value="1">
-                                </div>
-                                <div>
-                                    <label for="">Հանել թեժ նորությունների շարքից</label>
-                                    <input type="radio" name="popular" value="0">
-                                </div>
+                                <% if(news.popular === true) {%>
+                                    <div>
+                                        <label for="">Հանել թեժ նորությունների շարքից</label>
+                                        <input type="radio" name="popular" value="0">
+                                    </div>
+                                <%} else {%>
+                                        <div>
+                                            <label for="">Ավելացնել թեժ նորությունների շարքին</label>
+                                            <input type="radio" name="popular" value="1">
+                                        </div>
+                                <%} %>
                             </div>
                             <div class="form-group">
-                                <div>
-                                    <label for="">Ավելացնել հրատապ նորությունների շարքին</label>
-                                    <input type="radio" name="urgently" value="1">
-                                </div>
-                                <div>
-                                    <label for="">Հանել հրատապ նորությունների շարքից</label>
-                                    <input type="radio" name="urgently" value="0">
-                                </div>
+                                <% if(news.urgently === true) {%>
+                                    <div>
+                                        <label for="">Հանել հրատապ նորությունների շարքից</label>
+                                        <input type="radio" name="urgently" value="0">
+                                    </div>
+                                <%} else {%>
+                                        <div>
+                                            <label for="">Ավելացնել հրատապ նորությունների շարքին</label>
+                                            <input type="radio" name="urgently" value="1">
+                                        </div>
+                                <%} %>
                             </div>
                         </div>
                         <div class="modal-footer">

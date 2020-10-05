@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     const special_news = await News.find({special: true}).sort({_id: -1})
     const popular_news = await News.find({popular: true}).sort({_id: -1}).limit(5)
     const urgently = await News.find({urgently: true}).sort({_id: -1}).limit(9)
-    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1}).sort({_id: -1})
 
     let live = await Live.find()
 

@@ -7,7 +7,7 @@ const AboutImgs = require('../models/About-images')
 
 router.get('/', async (req, res) => {
     const about = await About.find()
-    const urgently_news = await News.find({urgently: true})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
     const aboutImgs = await AboutImgs.find().sort({_id: -1})
 
     const logo = await Logo.find()

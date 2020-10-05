@@ -10,7 +10,7 @@ router.get('/:page', async (req, res) => {
     let page = req.params.page || 1
 
     const website = await Website.find()
-    const urgently_news = await News.find({urgently: true})
+    const urgently_news = await News.find({urgently: true}).sort({_id: -1})
     const logo = await Logo.find()
     const contact = await Contact.find()
 
