@@ -1,5 +1,9 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css);
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+body {
+    font-family: "Nunito", sans-serif;
+}
 .no-margin {
     padding: 0;
     margin: 0;
@@ -11366,6 +11370,7 @@ p {
 .wrap__article-detail-content p {
     line-height: 28px;
     color: #333;
+    font-size: 15px;
 }
 
 p.has-drop-cap-container {
@@ -12671,6 +12676,10 @@ input[type="number"] {
 
 .card__post {
     position: relative;
+}
+
+.day_news {
+    border: 1px solid #eee
 }
 
 .card__post .card__post__body {

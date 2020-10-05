@@ -44,11 +44,7 @@
                                         </div>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <span class="text-primary">
-                                                    by <%= i.author %>
-                                                </span>
-                                            </li>
-                                            <li class="list-inline-item">
+                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                                 <span class="text-dark text-capitalize">
                                                     <%= i.created_at %>
                                                 </span>
@@ -67,7 +63,7 @@
                             <div class="pagination wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.5s"
                                  style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeIn;">
                                 <% if (current == 1) { %>
-                                    <a>First</a>
+                                    <a>Սկիզբ</a>
                                 <% } else { %>
                                     <a href="/category/1">First</a>
                                 <% } %>
@@ -86,7 +82,7 @@
                                     <% } %>
                                 <% } %>
                                 <% if (current == pages) { %>
-                                    <a>Last</a>
+                                    <a>Վերջ</a>
                                 <% } else { %>
                                     <a href="/category/<%= pages %>">Last</a>
                                 <% } %>

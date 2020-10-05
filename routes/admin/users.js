@@ -3,7 +3,7 @@ const router = Router()
 const User = require('../../models/User')
 const auth = require('../../middlewares/auth')
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const users = await User.find()
 
     res.render('admin/users', {

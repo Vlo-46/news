@@ -1,8 +1,9 @@
 const {Router} = require('express')
 const router = Router()
 const Live = require('../../models/Live')
+const auth = require('../../middlewares/auth')
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const live = await Live.find()
 
     res.render('admin/live', {live, title: 'Ուղիղ միացում'})

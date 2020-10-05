@@ -13,6 +13,9 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id;
     const news = await News.findById(id)
 
+    let description = news.description
+    description = description.replace(/(<([^>]+)>)/gi, "")
+
     const urgently_news = await News.find({urgently: true}).sort({_id: -1})
     const logo = await Logo.find()
 
@@ -28,7 +31,8 @@ router.get('/:id', async (req, res) => {
         urgently_news,
         logo,
         category,
-        title: news.title
+        title: news.title,
+        description
     })
 })
 

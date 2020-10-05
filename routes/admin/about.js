@@ -3,6 +3,7 @@ const router = Router()
 const About = require('../../models/About')
 const multer = require('multer')
 const AboutImgs = require('../../models/About-images')
+const auth = require('../../middlewares/auth')
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -21,7 +22,7 @@ let upload = multer({
     },
 });
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const about = await About.find()
     const images = await AboutImgs.find().sort({_id: -1})
     res.render('admin/about', {

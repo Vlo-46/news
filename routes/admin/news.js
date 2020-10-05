@@ -4,6 +4,7 @@ const News = require('../../models/News')
 const multer = require('multer');
 const Category = require('../../models/Category')
 const Tags = require('../../models/Tags')
+const auth = require('../../middlewares/auth')
 
 let storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -17,7 +18,7 @@ let storage = multer.diskStorage({
 let upload = multer({storage: storage}).array('avatar', 10);
 
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const news = await News.find().sort({_id: -1})
     const category = await Category.find()
 

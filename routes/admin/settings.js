@@ -5,6 +5,7 @@ const Contact = require('../../models/Contact')
 const multer = require('multer')
 const WebsiteLogo = require('../../models/Logo')
 const Category = require('../../models/Category')
+const auth = require('../../middlewares/auth')
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -23,7 +24,7 @@ let upload = multer({
     },
 });
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const website = await Website.find()
     const contact = await Contact.find()
     const logo = await WebsiteLogo.find()

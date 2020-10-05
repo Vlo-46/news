@@ -137,32 +137,33 @@
                                                 <% urgently_news.forEach(i => { %>
                                                     <div class="item">
                                                         <!-- Post Article -->
-                                                        <div class="article__entry">
-                                                            <div class="article__image">
+                                                        <div class="card__post card__post-list">
+                                                            <div class="image-sm">
                                                                 <a href="/article-detail/<%= i.id %>">
-                                                                    <img src="/uploads/<%= i.avatar[0] %>" alt=""
-                                                                         class="img-fluid">
+                                                                    <img src="/uploads/<%= i.avatar[0] %>" class="img-fluid" alt="" style="height: 100%">
                                                                 </a>
                                                             </div>
-                                                            <div class="article__content">
-                                                                <h5>
-                                                                    <a href="/article-detail/<%= i.id %>">
-                                                                        <%= i.title %>
-                                                                    </a>
-                                                                </h5>
-                                                                <ul class="list-inline">
-                                                                    <li class="list-inline-item">
-																		<span class="text-primary">
-																			by <%= i.author %>
-																		</span>
-                                                                    </li>
+                                                            <div class="card__post__body ">
+                                                                <div class="card__post__content">
+                                                                    <div class="card__post__title">
+                                                                        <h6>
+                                                                        <a href="/article-detail/<%= i.id %>">
+                                                                                <%= i.title %>
+                                                                            </a>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="card__post__author-info mb-2">
+                                                                        <ul class="list-inline">
+                                                                            <li class="list-inline-item">
+                                                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                                                <span class="text-dark text-capitalize date">
+                                                                                    <%= i.created_at %>
+                                                                                </span>
+                                                                            </li>
 
-                                                                    <li class="list-inline-item">
-																		<span>
-																			<%= i.created_at %>
-																		</span>
-                                                                    </li>
-                                                                </ul>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
